@@ -1,6 +1,7 @@
 # VueVixens
 
 Based on the "Heroines of JavaScript" Vue Vixens card set. 
+Project inspired by [Women-In-Tech]https://women-in-tech.online/
 
 ---
 
