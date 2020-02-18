@@ -160,21 +160,29 @@ const HEROINES = [
 	}
 ];
 
-for (const heroine of HEROINES){
-	const div = `<div class="flip-card five wide column">` +
-  				`	<div class="flip-card-inner">` +
-	    		`		<div class="flip-card-front" style="background-color:${heroine.Color.background};color:${heroine.Color.text}">` +
-	      		`			<img src="${heroine.Img.src}" alt="${heroine.Img.alt}" class="ui centered medium image">` +
-	      		`			<h1>${heroine.Name}</h1>` +
-	      		`			<p class="jobs">${heroine.Job}</p>` +
-	    		`		</div>` +
-	    		`		<div class="flip-card-back" style="background-color:${heroine.Color.background};color:${heroine.Color.text}">` +
-	      		`			<h1>${heroine.Name}</h1>` +
-	     		`			<p> <i class="twitter icon"></i> <a href="${heroine.Twitter.link}"> ${heroine.Twitter.name}</a>` +
-	      		`			<p> ${heroine.Description}</p>` +
-	    		`		</div>` +
-  				`	</div>` +
-				`</div>`;
-	$( ".root" ).append( div );
+$(".internetExplorerEdge").hide();
+
+
+if (navigator.userAgent.search("MSIE") >= 0) {
+	$(".internetExplorerEdge").show();  
+	console.log("is IE");
 }
 
+
+for (let heroine of HEROINES) {
+	const div = `<div class="flip-card five wide column"> \
+  					<div class="flip-card-inner"> \
+	    				<div class="flip-card-front" style="background-color:${heroine.Color.background};color:${heroine.Color.text}"> \
+	      					<img src="${heroine.Img.src}" alt="${heroine.Img.alt}" class="ui centered medium image"> \
+	      					<h1>${heroine.Name}</h1> \
+	      					<p class="jobs">${heroine.Job}</p> \
+	    				</div> \
+	    				<div class="flip-card-back" style="background-color:${heroine.Color.background};color:${heroine.Color.text}"> \
+	      					<h1>${heroine.Name}</h1> \
+	     					<p> <i class="twitter icon"></i> <a href="${heroine.Twitter.link}"> ${heroine.Twitter.name}</a> \
+	      					<p> ${heroine.Description}</p> \
+	    				</div> \
+  					</div> \
+				</div>`;
+	$( ".root" ).append( div );
+}
